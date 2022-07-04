@@ -24,7 +24,7 @@ type initData struct {
 }
 
 const embedPage string = "web/embed/embed.html"
-const addr string = ":80"
+const addr string = ":8080"
 
 type Server struct {
 	appID      string

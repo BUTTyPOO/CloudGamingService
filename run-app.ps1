@@ -16,11 +16,11 @@ sleep 2
 
 # ffmpeg setup
     $ffmpegParams = -join @(
-        "-f gdigrab -framerate 60 -video_size 1920x1080 -i desktop -pix_fmt yuv420p "
+        "-f gdigrab -framerate 60 -video_size 1920x1080 -i desktop -pix_fmt yuv420p -vsync passthrough "
         if ( 'h264' -eq $vcodec )
-            { "-c:v libx264 -tune zerolatency -preset ultrafast -crf 30 -x264opts keyint=120:no-scenecut -vsync 0 " } else
-            { "-c:v libvpx -deadline realtime -quality realtime -crf 4 " }
-        "-vf scale=852:480 "
+            { "-c:v libx264 -tune zerolatency " } else
+            { "-c:v libvpx -b:v 15M -deadline realtime -quality realtime " }
+        "-vf scale=1280x720 "
         "-f rtp rtp://127.0.0.2:5004 "
     )
     echo "encoding params: "$ffmpegParams

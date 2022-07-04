@@ -30,7 +30,7 @@ var curApp = "Notepad"
 
 const embedPage string = "web/embed/embed.html"
 const indexPage string = "web/index.html"
-const addr string = ":80"
+const addr string = ":8080"
 
 var chatEventTypes = []string{"CHAT"}
 var appEventTypes = []string{"OFFER", "ANSWER", "MOUSEDOWN", "MOUSEUP", "MOUSEMOVE", "KEYDOWN", "KEYUP"}

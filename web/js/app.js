@@ -23,6 +23,7 @@ var offerst;
 var appList = [];
 
 function init() {
+
   connect(location.protocol, location.host);
   const timeoutMs = 1111;
   const address = `apps`;

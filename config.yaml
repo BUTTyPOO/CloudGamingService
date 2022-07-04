@@ -4,18 +4,19 @@ appFile: sol.exe # File Name of the app in the directory
 windowTitle: spider # Window Title: not to show, it's the substring of title to help specify the running program in OS
 pageTitle: "Fall Guys" # Page Title: To display on webpage
 appName: Spider # App name: to show in discovery
-appMode: single # app mode: collaborative/single (ex. collaborative: multiple user using same game session)
+appMode: collaborative # app mode: collaborative/single (ex. collaborative: multiple user using same game session)
 hasChat: false # Toggle chat
 virtualize: false # For Windows, Run in VM (Sandbox) if true. Linux is already fully virtualized with Docker+Wine.
-videoCodec: h264 # h264 / vpx (vp8)
+videoCodec: vpx # h264 / vpx (vp8)
 screenWidth: 1920 # Optional: Default to be: 800
 screenHeight: 1080 # Optional: Default to be: 600
+
 # Manual external IP, see https://pkg.go.dev/github.com/pion/webrtc/v2#SettingEngine.SetNAT1To1IPs
 # format: IP/candidate type
-#nat1to1ip: 127.0.0.1/host
+# nat1to1ip: 127.0.0.1/host
 # disables WebRTC interceptors
-#disableInterceptors: true
-#stunturn: none
+# disableInterceptors: true
+# stunturn: none
 
 #Need to specify path
 # path: /apps/nfhdemo/bin # Directory to the app. NOTE: It's the path in winvm
