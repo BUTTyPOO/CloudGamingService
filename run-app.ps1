@@ -16,7 +16,7 @@ sleep 2
 
 # ffmpeg setup
     $ffmpegParams = -join @(
-        "-f gdigrab -framerate 60 -video_size 1920x1080 -i desktop -pix_fmt yuv420p -vsync passthrough "
+        "-f gdigrab -framerate 60 -video_size 1920x1080 -i desktop -pix_fmt yuv420p "
         if ( 'h264' -eq $vcodec )
             { "-c:v libx264 -tune zerolatency " } else
             { "-c:v libvpx -b:v 15M -deadline realtime -quality realtime " }
