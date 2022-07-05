@@ -19,9 +19,11 @@ sleep 2
         "-f gdigrab -framerate 60 -video_size 1920x1080 -i desktop -pix_fmt yuv420p "
         if ( 'h264' -eq $vcodec )
             { "-c:v libx264 -tune zerolatency " } else
-            { "-c:v libvpx -b:v 15M -deadline realtime -quality realtime " }
-        "-vf scale=1280x720 "
+            { "-c:v libvpx -b:v 500k -deadline realtime -quality realtime " }
+        "-vf scale=852x480 "
         "-f rtp rtp://127.0.0.2:5004 "
+
+        # "-f gdigrab -framerate 60 -video_size 1920x1080 -i desktop -pix_fmt yuv420p -c:v libvpx-vp9 -strict experimental -deadline realtime -quality realtime -speed 8 -error-resilient 1 -vf scale=1280x720 -f rtp rtp://127.0.0.2:5004"
     )
     echo "encoding params: "$ffmpegParams
 
